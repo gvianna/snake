@@ -54,12 +54,13 @@ window.onload = function(){
 /*pinta a cabeça e o rastro da cobrinha*/
     context.fillStyle = 'gray';
     for (var i = 0; i < trail.length; i++) {
-      context.fillRect(trail[i].x * tilelength, trail[i].y * tilelength, tilelength, tilelength);
+      context.fillRect(trail[i].x * tilelength, trail[i].y * tilelength, tilelength - 1, tilelength - 1);
 /*se alguma posição (eixo x ou y) do rastro for igual a posição da cabeça*/
       if (trail[i].x == placex && trail[i].y == placey){
 /*game over, cobrinha congela*/
         velox = 0;
         veloy = 0;
+        tail = 5;
       }
     }
 /*objeto que recebe a posição atual (x e y) da cobrinha*/
@@ -89,7 +90,7 @@ window.onload = function(){
         veloy = - velocity;
         break;
       case 39: //right
-        velox = vel;
+        velox = velocity;
         veloy = 0;
         break;
       case 40: //down
