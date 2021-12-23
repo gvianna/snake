@@ -5,7 +5,7 @@ window.onload = function(){
 /*context recebe o contexto do canvas(var stage), com type 2d pois se trata de uma renderizacao bidimensional*/
   var context = stage.getContext('2d');
 /*listener que executa a função keyPush toda vez que uma tecla é pressionada ('keydown')*/
-  document addEventListener('keydown', keyPush);
+  document.addEventListener('keydown', keyPush);
 /*intervalo (em milisegundos) que a funcao game será executada*/
   setInterval(game, 60);
 /*velocidade de movimento da cobrinha, ou quantas casas ela ira andar a cada refresh da funcao game*/
