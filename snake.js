@@ -4,6 +4,8 @@ window.onload = function(){
   var stage = document.getElementById('stage');
 /*context recebe o contexto do canvas(var stage), com type 2d pois se trata de uma renderizacao bidimensional*/
   var context = stage.getContext('2d');
+/*listener que executa a função keyPush toda vez que uma tecla é pressionada ('keydown')*/
+  document addEventListener('keydown', keyPush);
 /*intervalo (em milisegundos) que a funcao game será executada*/
   setInterval(game, 60);
 /*velocidade de movimento da cobrinha, ou quantas casas ela ira andar a cada refresh da funcao game*/
@@ -76,5 +78,27 @@ window.onload = function(){
     }
   }
 
+  function keyPush(event){
+    switch (event.keyCode) {
+      case 37: //left
+        velox = - velocity;
+        veloy = 0;
+        break;
+      case 38: //up
+        velox = 0;
+        veloy = - velocity;
+        break;
+      case 39: //right
+        velox = vel;
+        veloy = 0;
+        break;
+      case 40: //down
+        velox = 0;
+        veloy = velocity;
+        break;
+      default:
+        break;
+    }
+  }
 
 }
